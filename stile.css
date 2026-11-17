@@ -1,0 +1,90 @@
+:root {
+    --ink: #000000; /*inchiostro: testo e titoli*/
+    --base: #FFF8DC; /*sfondo della pagina*/
+    --giallo: #DAA520; /*passi collegati*/
+    --verde: #2E8B57; /*link*/
+    --scuro: #2F4F4F; /* link visitati*/
+    --blu: #008080; /*testi secondari*/
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #FFF8DC;
+        --base: #000000;
+        --giallo: #FFD700;
+        --verde: #90EE90;
+        --blu: #20B2AA;
+    }    
+}
+
+body {
+    margin: 0;
+    padding: 40px 24px;
+    background: var(--base);
+    color: var(--ink);
+    font-family: 'Nunito', Times, serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: 'Quicksand', Times, serif;
+    font-size: 46px;
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0 0 12px; 
+}
+
+.scheda {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 48px; 
+    max-width: 1100px;
+    margin: 0 auto;   
+}
+
+@media (max-widht: 860px) {
+    .scheda {
+        grid-template-columns: 1fr;
+    }    
+}
+
+img { max-width: 100%; height: auto; }
+
+.miniatura { margin: 0; }
+
+.miniatura img {
+    width: 240 px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+figcaption {
+    font-size: 14px;
+    color: var(--blu);
+    margin-top: 6px;
+}
+
+.autore {
+    color: var(--ink);
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px 20px;
+    border-top: 1px solid #C6CDC6;
+    padding-top: 12px;
+}
+
+dt { color: var(--blu); }
+dd { margin: 0; }
+
+a { color: var(--verde); }
+a:visited { color: var(--scuro); }
+a:hover { color: #8B008B; }
+
